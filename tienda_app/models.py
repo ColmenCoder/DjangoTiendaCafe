@@ -1,5 +1,6 @@
 """Este módulo contiene las definiciones de los modelos de la tienda de cafe"""
-
+from django.contrib.auth.models import AbstractUser
+#from django.core.exceptions import ValidationError
 from django.db import models
 
 
@@ -15,6 +16,25 @@ class Producto(models.Model):
 
     def __str__(self):
         return str (self.nombre)
+
+class Usuario(AbstractUser):
+
+    nomApe= models.CharField("Nombre y Apellido",max_length=50)
+    email = models.EmailField(max_length=50, unique=True)
+    direccion = models.CharField(max_length=100)
+
+    def __str__(self):
+        return str(self.nomApe)
+
+
+
+
+
+
+
+
+
+
 
 
 
