@@ -4,12 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incio</title>
+    <!-- letra nombre del local -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Lemon&family=Satisfy&display=swap" rel="stylesheet">
+    <!-- letra chica -->
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Lemon&family=Satisfy&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <!-- HASTA AQUI NOMBRE DEL LOCAL -->
+    <!-- link para el icono -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
 <body>
-    <h1>Esta es la página principal del proyecto</h1>
-    <p><a href="{% url 'registro_usuario' %}">Regístrate aquí</a></p>
+    <header>
+            <section class="container">
+                <section class="nombre">
+                    <h1 class="satisfy-regular">Aroma de Buenos Aires</h1></p>
+                    <!-- <h1>Aroma de Buenos Aires</h1> -->
+                    <h3 class="teko">Café de Especialidad</h3>
+                    <!-- <h3>Café de Especialidad</h3> -->
+                </section>
+                <section class="login-registro">
+
+                    <!-- <p><a href="{% url 'registro_usuario' %}">Regístrate</a></p> -->
+                    <p><a href="{% url 'login' %}">
+                        <i class="fa-solid fa-user fa-2x" style=" color: #F4A300;"></i>
+
+                </section>
+            </section>
+    </header>
+
+        <!-- <section class="nombre">
+            <h1>Aroma de Buenos Aires</h1>
+            <h3>Café de Especialidad</h3>
+        </section> -->
+    <main>
+        <section class="menu">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Home</a></li>
+                    <li><a href="productos">Nuestro Café</a></li>
+                    <li><a href="#"></a>Maquinas</li>
+                    <li><a href="#"></a>Contacto</li>
+                    <li><a href="#"></a>Fiestas Privadas</li>
+                </ul>
+            </nav>
+        </section>
+        <!-- <section class="login-registro">
 
 
+        <p><a href="{% url 'login' %}">
+            <i class="fa-solid fa-user fa-2x" style="color: coral;"></i>
+
+        </section> -->
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 Aroma de Buenos Aires. Todos los derechos reservados.</p>
+        <!-- <p><a href="politica_privacidad">Política de Privacidad</a> | <a href="terminos">Términos y Condiciones</a></p> -->
+    </footer>
 
 
 </body>

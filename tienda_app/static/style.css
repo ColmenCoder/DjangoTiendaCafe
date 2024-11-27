@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    /* background-color:#F7F1E1; */
+    /* color: #d9c1a5; */
+
+}
+.container{
+    background-color: #4B3832;
+    color: #F4A300;
+    height: 100px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+.menu{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.menu li{
+    display: inline-block;
+    margin: 0 30px;
+
+}
+.menu li a{
+    text-decoration: none;
+    color:  #F4A300;
+    font-size: 20px;
+
+}
+.menu li a:hover{
+    color: #9DAD7F;
+}
+.login-registro{
+    position: absolute;
+    right: 100px;
+    /* display: flex; */
+
+
+
+
+}
+
+.teko{ /*letra de especialistas en cafe*/
+    font-family: "Teko", sans-serif;
+    margin-left:100px;
+}
+.satisfy-regular{ /*letra de aroma de buenos aires*/
+    font-family: "Satisfy", cursive;
+    margin-left: 50px;
+}
