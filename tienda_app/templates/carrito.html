@@ -40,6 +40,8 @@
                       </a>
                       <div class="dropdown-menu">
                         <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
+
+
                       </div>
                     </div>
                     <a href="{% url 'ver_carrito' %}" class="icono-carrito">
@@ -59,41 +61,57 @@
             </section>
     </header>
     <main>
-      <section class="menu">
-          <nav>
-              <ul>
-                  <li><a href="{% url 'inicio' %}">Home</a></li>
-              </ul>
-          </nav>
-      </section>
-      <section class="pagina-registro">
-        <div class="registro-container">
-          <h1>Resgistro de usuario</h1>
-          {% if messages %}
-          <ul class="registro-mensajes">
-              {% for message in messages %}
-              <li style="color: red;">{{ message }}</li>
-              {% endfor %}
-              </ul>
-          {% endif %}
+        <section class="menu">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Home</a></li>
+                    <li><a href="{% url 'productos' %}">Nuestro Café</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="carrito-container">
+            <h1>Tu Carrito de Compras</h1>
 
-          <form method="post">
-              {% csrf_token %}
-              {{ form.as_p}}
-              <button type="submit">Resgistro</button>
-          </form>
-        </div>
-      </section>
+        {% if carrito_items %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in carrito_items %}
+                        <tr>
+                            <td>{{ item.producto.nombre }}</td>
+                            <td>{{ item.cantidad }}</td>
+                            <td>{{ item.producto.precio }}$</td>
+                            <td>{{ item.total }}$</td>
+                            <td><a href="{% url 'eliminar_del_carrito' item.id %}">Eliminar</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h3>Total: {{ total }}$</h3>
+            <a href="{% url 'procesar_compra' %}">Procesar compra</a>
+        {% else %}
+        <p class="mensaje-vacio">Tu carrito está vacío.</p>
+        {% endif %}
+        </section>
+</main>
 
 
 
+<footer>
+    <p>&copy; 2024 Aroma de Buenos Aires. Todos los derechos reservados.</p>
 
-    <footer>
-        <p>&copy; 2024 Aroma de Buenos Aires. Todos los derechos reservados.</p>
+    <p>Sitio creado por ColmenCoder</p>
 
-        <p>Sitio creado por ColmenCoder</p>
-
-    </footer>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

@@ -26,6 +26,18 @@ class Usuario(AbstractUser):
     def __str__(self):
         return str(self.nomApe)
 
+class Carrito(models.Model):
+    user = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="carrito")
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return f"Carrito de {self.user.nomApe}"
+
+    @property
+    def total(self):
+        return self.producto.precio * self.cantidad
+
 
 
 

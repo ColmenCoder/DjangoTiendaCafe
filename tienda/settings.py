@@ -142,3 +142,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 """Agregue el modelo de usuario"""
 AUTH_USER_MODEL = 'tienda_app.Usuario'
+
+LOGIN_URL = 'login'

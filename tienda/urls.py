@@ -29,6 +29,11 @@ urlpatterns = [
     path('registro_usuario/', views.registro_usuario, name='registro_usuario' ),
     path('', views.inicio, name='inicio'),
     path('login/', views.iniciar_sesion, name='login'),
+    path('contacto/', views.contacto_view, name='contacto'),
+    path('cerrar-sesion/', views.cerrar_sesion, name='cerrar_sesion'),
     path('productos/', mostrar_productos, name='productos'),
+    path('agregar-al-carrito/<int:producto_id>/', views.agregar_al_carrito, name='agregar_al_carrito'),
+    path('carrito/', views.ver_carrito, name='ver_carrito'),
+    path('eliminar-del-carrito/<int:carrito_id>/', views.eliminar_del_carrito, name='eliminar_del_carrito'),
+    path('procesar-compra/', views.procesar_compra, name='procesar_compra'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #para mostrar img
-

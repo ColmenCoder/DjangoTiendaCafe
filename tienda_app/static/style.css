@@ -3,21 +3,69 @@
     margin: 0;
 
 }
-body{
+/* body{
     /* background-color:#F7F1E1; */
-    /* color: #d9c1a5; */
+    /* color: #d9c1a5;
 
-}
-.container{
-    background-color: #4B3832;
+} */
+.container-1{
+    background-color: #4B3832 ;
     color: #F4A300;
-    height: 100px;
-    padding: 5px 0;
+    height: 150px ;
+    /* padding: 10px 10px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 24px;
+    /* margin-bottom: 20px; */
+    /* font-size: 18px; */
 }
+.container-1 .nombre{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 40px;
+    /* text-align: left; */
+}
+.container-1 .nombre h1{
+    font-size: 30px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 1;
+
+}
+.container-1 .nombre h3{
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-left: 90px;
+    line-height: 1;
+
+}
+.container-1 .promocion {
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.login-registro{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: right;
+    margin-right: 40px;
+    /* position: relative; */
+}
+.icono-carrito {
+    color: #F4A300;  /* Puedes ajustar el color */
+    transition: color 0.3s;
+}
+
+/* menu principal pagina inicio*/
 .menu{
     list-style: none;
     text-align: center;
@@ -38,21 +86,656 @@ body{
 .menu li a:hover{
     color: #9DAD7F;
 }
-.login-registro{
-    position: absolute;
-    right: 100px;
-    /* display: flex; */
 
-
-
-
-}
 
 .teko{ /*letra de especialistas en cafe*/
     font-family: "Teko", sans-serif;
-    margin-left:100px;
+
 }
 .satisfy-regular{ /*letra de aroma de buenos aires*/
     font-family: "Satisfy", cursive;
-    margin-left: 50px;
+
 }
+/* estilo carrusel pagina inicio*/
+.carousel{
+    width: 100%;
+    margin: 0;
+
+}
+/* .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+} */
+.carousel-item img{
+    object-fit:contain;
+    width: 100%;
+    height: 100%;
+}
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+    background-color: transparent;
+}
+
+
+.carousel-caption h5 {
+    font-family: 'Satisfy', cursive;
+
+    color:white;
+    font-size: 50px;
+}
+
+.carousel-caption p {
+    font-family: 'Teko', sans-serif;
+    color:white;
+    font-size: 40px;
+}
+#carouselExampleAutoplay .carousel-inner {
+    height: 800px;
+}
+
+/* Solo modifica el carrusel con el id 'carouselExampleAutoplay' */
+#carouselExampleAutoplay .carousel-item img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+
+.texto{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.texto h1{
+    font-family: "Satisfy", cursive;
+    font-size: 50px;
+
+}
+.texto h3{
+    font-family: "Teko", sans-serif;
+    font-size: 40px;
+}
+
+
+
+/* style de las tarjetas en inicio.html*/
+.img-varias {
+    padding: 20px;
+}
+
+.card {
+    display: block;
+    margin: 10px 0;
+    background-color:#9DAD7F !important;
+}
+
+.card-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.card img {
+    width: 600px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card .text {
+    font-size: 30px;
+    line-height: 1.5;
+    /* color:#F4A300; */
+    text-align: center;
+
+}
+
+
+footer{
+    background-color: #4B3832;
+    color: #F4A300;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+    font-family: "Teko", sans-serif;
+
+
+
+}
+/* card productos*/
+@keyframes animacionBlackFriday {
+    0% {
+        transform: scale(1);
+        color: #F4A300;
+    }
+    50% {
+        transform: scale(1.5);
+        color: black;
+    }
+    100% {
+        transform: scale(1);
+        color: olive;
+    }
+}
+
+
+
+.card-productos .texto-p h1,
+.card-productos .texto-p h3{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    /* animation: aparecerTexto 1s ease-out; */
+    /* animation: parpadeo 2s infinite; */
+}
+.texto-p h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    animation: animacionBlackFriday 2s infinite ease-in-out;
+}
+
+.texto-p h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    animation: animacionBlackFriday 3s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+
+
+.productos {
+    display: grid;
+    /* flex-direction: wrap; */
+    grid-template-columns: repeat(4, 1fr);
+    /* flex-wrap: wrap; */
+    gap: 30px;
+    justify-content: center;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.tarjeta h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta figure {
+    margin: 0;
+}
+
+.tarjeta img {
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 5px;
+}
+
+.tarjeta figcaption {
+    font-size: 20px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.tarjeta p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+/*stilo del boton agg carrito*/
+.boton-agregar-carrito {
+    background-color: #F4A300;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton-agregar-carrito i {
+    margin-right: 10px;
+}
+
+.boton-agregar-carrito:hover {
+    background-color: #9DAD7F;
+    transform: scale(1.05);
+}
+
+.boton-agregar-carrito:active {
+    transform: scale(0.98);
+}
+/*estilo para el despliegue de cerrar sesion*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    right: 0;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+}
+/* Mostrar el menú cuando se activa */
+.dropdown.show .dropdown-menu {
+    display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color:  #9DAD7F;
+}
+
+/*style de login.html*/
+/* Contenedor del formulario */
+.pagina-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #f4f4f4;
+}
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Teko', sans-serif;
+    color: #F4A300;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Teko', sans-serif;
+    color: #333;
+    margin-top: 20px;
+}
+
+
+label {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #F4A300;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9DAD7F;
+}
+
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+
+p a {
+    color: #F4A300;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    background-color: #9DAD7F;
+    text-decoration: underline;
+}
+/*estilo para pagina de registro*/
+/* Contenedor principal */
+
+.pagina-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Contenedor del formulario */
+.registro-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+
+}
+.registro-container h1{
+    color: #F4A300;
+    text-align: center;
+}
+
+
+.registro-container form p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+
+.registro-container input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+
+.registro-container input:focus {
+    outline: none;
+    border-color: #f4a300;
+    box-shadow: 0 0 5px rgba(244, 163, 0, 0.5);
+}
+
+
+.boton-registro {
+    background-color: #f4a300;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.boton-registro:hover {
+    background-color: #d88c00;
+}
+
+
+.registro-mensajes {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.registro-mensajes li {
+    color: red;
+    font-size: 14px;
+}
+/* html contacto*/
+
+.contacto {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contacto label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contacto input[type="text"],
+.contacto input[type="email"],
+.contacto select,
+.contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contacto button[type="submit"] {
+    width: 100%;
+    background-color: #f4a300;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.contacto button[type="submit"]:hover {
+    background-color: #9DAD7F;
+}
+
+.contacto .mensaje-exito {
+    background-color: #e0f7e9;
+    padding: 10px;
+    border: 1px solid #b2d8b2;
+    border-radius: 5px;
+    color: #2d7a2d;
+    margin-top: 20px;
+}
+
+/* estilo html carrito*/
+
+.carrito-container h1 {
+    text-align: center;
+    color: #f4a300;
+    margin-bottom: 20px;
+    font-family: 'Teko', sans-serif;
+}
+
+
+.carrito-container {
+
+    max-width: 1200px;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de la tabla del carrito */
+.carrito-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.carrito-container table th,
+.carrito-container table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.carrito-container table th {
+    background-color: #9DAD7F;
+    color: white;
+    font-family: 'Teko', sans-serif;
+}
+
+.carrito-container table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.carrito-container a {
+    color: #f4a300;
+    text-decoration: none;
+}
+
+.carrito-container a:hover {
+    text-decoration: underline;
+}
+
+.carrito-container h3 {
+    text-align: right;
+    color: #333;
+}
+
+.carrito-container .proceder-compra {
+    display: inline-block;
+    background-color: #f4a300;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.carrito-container .proceder-compra:hover {
+    background-color: #d18f00;
+}
+
+.carrito-container .mensaje-vacio {
+    text-align: center;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+/* CSS para la página de proceder la compra */
+.compra-container {
+    max-width: 800px;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.compra-container h1{
+    color:#f4a300;
+    margin-bottom: 0px;
+    font-family: 'Teko', sans-serif;
+    font-size: 30px;
+}
+.compra-container h3{
+    color: #333;
+    margin-top: 0px;
+    font-size: 24px;
+
+}
+
+.compra-container ul
+{ list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+.compra-container ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px
+}
+.compra-container ul li:last-child {
+    border-bottom: none;
+}
+
+.compra-container .total {
+    text-align: right;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.compra-container form {
+    text-align: center;
+}
+.compra-container .mensaje-vacio {
+    text-align: center;
+    color: #888; font-size: 1.2rem;
+    flex-grow: 1;
+    display: flex; align-items:
+    center; justify-content: center;
+}
+
+
+
+

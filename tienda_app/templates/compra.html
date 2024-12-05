@@ -57,39 +57,35 @@
         </section>
 </header>
 <main>
-  <section class="menu">
-      <nav>
-          <ul>
-              <li><a href="{% url 'inicio' %}">Home</a></li>
-          </ul>
-      </nav>
-  </section>
+    <section class="menu">
+        <nav>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Home</a></li>
+            </ul>
+        </nav>
+        <section class="compra-container">
+            <h1>Proceder a la Compra</h1>
+            <h3>Resumen del Pedido</h3>
+            <ul>
+                {% for item in carrito_items %}
+                    <li>
+                        {{ item.producto.nombre }} - {{ item.cantidad }} x ${{ item.producto.precio }} = ${{ item.total }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <p class="total">Total a pagar: ${{ total }}</p>
 
-    <section class="card-productos">
-        <section class="texto-p">
-            <h1>¡¡BLACK FRIDAY!!</h1>
-            <h3> 30% OFF En la segunda unidad</h3>
+            <!-- Botón para confirmar la compra -->
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit">Confirmar compra</button>
+            </form>
+
+
+
+
         </section>
-        <div class="productos">
-            {% for producto in productos %}
-                <div class="tarjeta">
-                    <h2>{{ producto.nombre }} - {{ producto.precio }}$</h2>
-                    {% if producto.imagen %}
-                        <figure>
-                            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" width="200">
-                            <figcaption>{{ producto.descripcion }}</figcaption>
-                        </figure>
-                    {% else %}
-                        <p>No hay imagen disponible</p>
-                    {% endif %}
-                    <a href="{% url 'agregar_al_carrito' producto.id %}" class="boton-agregar-carrito">
-                        <i class="fas fa-shopping-cart"></i> Agregar al Carrito
-                    </a>
-                </div>
-            {% empty %}
-                <p>No hay productos disponibles</p>
-            {% endfor %}
-        </div>
+
     </section>
 
 </main>
@@ -97,7 +93,7 @@
     <p>&copy; 2024 Aroma de Buenos Aires. Todos los derechos reservados.</p>
 
     <p>Sitio creado por ColmenCoder</p>
-
+            <!-- <p><a href="politica_privacidad">Política de Privacidad</a> | <a href="terminos">Términos y Condiciones</a></p> -->
 </footer>
 </body>
 </html>
